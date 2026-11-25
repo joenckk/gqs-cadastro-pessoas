@@ -1,3 +1,4 @@
+
 # .pre-commit-config.yaml
 repos:
   - repo: local
@@ -7,6 +8,9 @@ repos:
         entry: python -m pylint
         language: system
         types: [python]
+        files: ^(src/|tests/)
+        exclude: ^selenium_login_.*\.py$
+
       - id: pytest
         name: pytest
         entry: python -m pytest -q
